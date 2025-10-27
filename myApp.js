@@ -16,6 +16,11 @@ app.get("/now", function middleware(req, res, next){
    res.json({time: req.time})
 })
 
+app.get("/:word/echo", (req, res)=>{
+  const word = req.params.word
+  res.json({echo: word})
+})
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + "/views/index.html")
 });
